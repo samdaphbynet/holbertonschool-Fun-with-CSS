@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.toggle {
+    position: relative;
+}
+
+.toggle-cb {
+    display: none;
+}
+
+.toggle-inner {
+    margin-top: 30px;
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #ff0000;
+    border: 2px solid rgb(179, 179, 179);
+    position: relative;
+}
+
+.toggle-inner::after {
+    content: "Yes";
+    position: absolute;
+    top: 7px;
+    left: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.toggle-switch::after {
+    content: "No";
+    position: absolute;
+    top: 38px;
+    right: 25px;
+    display: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(194, 194, 194);
+}
+
+.toggle-inner::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    right: -2px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px solid rgb(179, 179, 179);
+    background-color: #fff;
+}
+
+
+.toggle-cb:checked + .toggle-label .toggle-inner::before {
+    transform: translateX(-70px);
+    
+}
+
+.toggle-cb:checked + .toggle-label .toggle-inner::after {
+    display: none;
+}
+
+.toggle-cb:checked + .toggle-label .toggle-inner {
+    background-color: #e4e4e4;
+}
+
+.toggle-cb:checked + .toggle-label .toggle-switch::after {
+    display: block;
+}
